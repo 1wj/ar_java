@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.iweb.dao.UserDao">
+
+    <select id="findByLoginAndPassword" resultType="com.iweb.model.User">
+        select * from ssm_user
+        where loginname=#{loginname} and password=#{password}
+    </select>
+
+    <select id="findByLoginAndPassword2" resultType="com.iweb.model.User">
+        select * from user_inf
+        where loginname=#{loginname} and password=#{password}
+    </select>
+
+    <select id="count" resultType="Integer">
+        select count(*) from user_inf where 1=1
+        <if test="likevalue!=null and likevalue!=''">
+            and (loginname like '%${likevalue}%' or username like '%${likevalue}%')
+        </if>
+    </select>
+
+    <select id="selectByPage" resultType="com.iweb.model.User">
+        select * from (select t.* ,rownum rn from (select
+            id,loginname,password,to_char(createDate,'yyyy-MM-dd') as createDate, username
+            from user_inf where 1=1
+            <if test="likevalue!=null and likevalue!=''">
+                and (loginname like '%${likevalue}%' or username like '%${likevalue}%')
+            </if>
+            order by id desc
+         ) t
+        ) where rn &lt;= #{pageIndex} * #{pageSize}
+          and   rn &gt; (#{pageIndex}-1)  * #{pageSize}
+
+
+
+        <if test="likevalue!=null and likevalue!=''">
+            and (loginname like '%${likevalue}%' or username like '%${likevalue}%')
+        </if>
+    </select>
+
+    <insert id="addUser" parameterType="com.iweb.model.User">
+        <selectKey keyProperty="id" order="BEFORE" resultType="Integer">
+            select HRM_SEQ.Nextval id from dual
+        </selectKey>
+        insert into user_inf(id,loginname,password,createDate,username)
+        values(#{id},#{loginname},#{password},sysdate,#{username})
+    </insert>
+
+
+    <select id="findUserById" resultType="com.iweb.model.User">
+        select * from user_inf where id=#{id}
+    </select>
+
+    <update id="updateUser">
+        update user_inf
+         set loginname=#{loginname,jdbcType=VARCHAR},password=#{password,jdbcType=VARCHAR},username=#{username,jdbcType=VARCHAR}
+        where id=#{id,jdbcType=INTEGER}
+    </update>
+
+    <delete id="deleteUser">
+        delete
+        from user_inf
+        where id=#{id}
+    </delete>
+
+    <select id="findNoticeByUserId" resultType="com.iweb.model.Notice">
+        select * from NOTICE_INF where id=#{id}
+    </select>
+
+    <select id="checkLoginnameByname" resultType="com.iweb.model.User">
+        select * from user_inf where loginname=#{loginname}
+    </select>
+</mapper>

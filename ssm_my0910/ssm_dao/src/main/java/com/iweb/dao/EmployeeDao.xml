@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.iweb.dao.EmployeeDao">
+
+    <insert id="addEmployee">
+        <selectKey keyProperty="id" order="BEFORE" resultType="Integer">
+            select HRM_SEQ.Nextval id from dual
+        </selectKey>
+        insert into employee_inf (
+            id,dept_id,job_id,name,card_id,address,post_code,tel,
+            phone,qq_num,email,sex,party,birthday,race,education,speciality,
+            hobby ,remark,create_date
+        )
+        values (
+            #{id}, #{dept_id}, #{job_id}, #{name}, #{card_id}, #{address}, #{post_code},
+            #{tel}, #{phone}, #{qq_num}, #{email}, #{sex}, #{party}, #{birthday},
+            #{race}, #{education}, #{speciality}, #{hobby}, #{remark}, sysdate
+               );
+    </insert>
+
+    <delete id="deleteEmployee">
+        delete from employee_inf where id=#{id}
+    </delete>
+
+    <select id="findEmployeeById"  resultMap="employeeMap">
+        select * from employee_inf where id=#{id}
+    </select>
+
+    <select id="count" resultType="int">
+        select count(*) from employee_inf where 1=1
+      <!--  <if test="likevalue!=null and likevalue!=''">
+            and (sex like '%${likevalue}%' or username like '%${likevalue}%')
+        </if>-->
+    </select>
+
+
+    <resultMap id="employeeMap" type="com.iweb.model.Employee" >
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="card_id" column="card_id"/>
+        <result property="address" column="address"/>
+        <result property="post_code" column="post_code"/>
+        <result property="tel" column="tel"/>
+        <result property="phone" column="phone"/>
+        <result property="qq_num" column="qq_num"/>
+        <result property="email" column="email"/>
+        <result property="sex" column="sex"/>
+        <result property="party" column="party"/>
+        <result property="birthday" column="birthday"/>
+        <result property="race" column="race"/>
+        <result property="education" column="education"/>
+        <result property="speciality" column="speciality"/>
+        <result property="hobby" column="hobby"/>
+        <result property="remark" column="remark"/>
+        <result property="create_date" column="create_date"/>
+        <association property="dept" column="dept_id" javaType="com.iweb.model.Dept"
+                     select="com.iweb.dao.DeptDao.findDeptById">
+        </association>
+        <association property="job" column="job_id" javaType="com.iweb.model.Job"
+                     select="com.iweb.dao.JobDao.findJobById">
+        </association>
+    </resultMap>
+
+    <select id="selectByPage" resultMap="employeeMap">
+        select * from
+         (select t.* ,rownum rn from
+             (select * from
+                 employee_inf where 1=1
+                  <if test="selectjob_id!=null and selectjob_id!=''">
+                     and job_id=#{selectjob_id}
+                  </if>
+                  <if test="selectdept_id!=null and selectdept_id!=''">
+                      and dept_id=#{selectdept_id}
+                  </if>
+                  <if test="selectsex!=null and selectsex!=''">
+                      and sex=#{selectsex}
+                  </if>
+                  <if test="selectsex!=null and selectsex!=''">
+                      and sex=#{selectsex}
+                  </if>
+                  order by id desc
+              ) t
+         ) a
+        where a.rn &lt;= #{pageIndex} * #{pageSize}
+            and   a.rn &gt; (#{pageIndex}-1)  * #{pageSize}
+       <!-- <if test="likevalue!=null and likevalue!=''">
+            and (loginname like '%${likevalue}%' or username like '%${likevalue}%')
+        </if>-->
+    </select>
+
+
+
+</mapper>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ch8-11/ch8-11.iml" filepath="$PROJECT_DIR$/ch8-11/ch8-11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch8-13/ch8-13.iml" filepath="$PROJECT_DIR$/ch8-13/ch8-13.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch9-17-2/ch9-17-2.iml" filepath="$PROJECT_DIR$/ch9-17-2/ch9-17-2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch9-17hellospringboot/ch9-17hellospringboot.iml" filepath="$PROJECT_DIR$/ch9-17hellospringboot/ch9-17hellospringboot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch9-5/ch9-5.iml" filepath="$PROJECT_DIR$/ch9-5/ch9-5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myspringmvc/myspringmvc.iml" filepath="$PROJECT_DIR$/myspringmvc/myspringmvc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/redistest/redistest.iml" filepath="$PROJECT_DIR$/redistest/redistest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssm_my0910/ssm_controller/ssm_controller.iml" filepath="$PROJECT_DIR$/ssm_my0910/ssm_controller/ssm_controller.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssm_my0910/ssm_dao/ssm_dao.iml" filepath="$PROJECT_DIR$/ssm_my0910/ssm_dao/ssm_dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssm_my0910/ssm_my0910.iml" filepath="$PROJECT_DIR$/ssm_my0910/ssm_my0910.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssm_my0910/ssm_service/ssm_service.iml" filepath="$PROJECT_DIR$/ssm_my0910/ssm_service/ssm_service.iml" />
+    </modules>
+  </component>
+</project>

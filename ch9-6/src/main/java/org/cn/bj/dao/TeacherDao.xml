@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.cn.bj.dao.TeacherDao">
+
+    <!--根据系别编号，查询该系别下的老师的详细信息，不包含其他系别信息-->
+    <select id="queryByDno" resultType="org.cn.bj.domain.Teacher">
+        select * from my_teacher where dno=#{dno}
+    </select>
+
+    <!--根据教师编号，查询该编号下的老师的详细信息，以及该教师所在系别的详细信息-->
+    <select id="queryByTnoFoundDept" resultMap="usemap">
+        select *  from my_teacher where tno=#{tno}
+    </select>
+
+    <resultMap id="usemap" type="org.cn.bj.domain.Teacher">
+        <id column="tno" property="tno"/>
+        <result column="tname" property="tname"/>
+        <result column="tage" property="tage"/>
+        <association column="dno" select="org.cn.bj.dao.DeptDao.queryDeptByDeptId"
+                     property="dept" javaType="org.cn.bj.domain.Dept"/>
+    </resultMap>
+</mapper>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com.iweb"/>
+
+   <!-- <bean id="stu" class="com.iweb.Student">
+        <property name="age" value="15"/>
+        <property name="name" value="张三"/>
+        <property name="id" value="1001"/>
+        <property name="dept" ref="dept"/>
+    </bean>
+-->
+  <!--  <bean id="dept" class="com.iweb.Dept">
+        <property name="dno" value="151"/>
+        <property name="dname" value="11"/>
+        <property name="dcount" value="1512"/>
+    </bean>-->
+  <!--  <bean id="dept" class="com.iweb.Dept">
+        <constructor-arg name="dno" value="151"/>
+        <constructor-arg name="dname" value="11"/>
+        <constructor-arg name="dcount" value="1512"/>
+    </bean>-->
+</beans>

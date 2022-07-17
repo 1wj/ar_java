@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!--指定properties文件的位置也叫引入外部配置文件， (target/class里面的)从类路径根开始找文件-->
+
+    <properties resource="jdbc.properties"/>
+
+    <!--控制mybatis全局行为-->
+    <settings>
+        <!--设置mybatis输出日志-->
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+
+
+
+    <environments default="mm">
+        <environment id="mm">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"/>
+                <!--连接数据库的字符串-->
+                <property name="url" value="${jdbc.url}"/>
+                <!--?serverTimezone=UTC-->
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.passwd}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+
+
+    <mappers>
+        <package name="org.cn.bj.dao"/>
+    </mappers>
+</configuration>

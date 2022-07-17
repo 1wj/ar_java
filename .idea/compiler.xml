@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ssm_service" />
+        <module name="ssm_controller" />
+        <module name="ch9-17-2" />
+        <module name="ssm_dao" />
+        <module name="ch9-17hellospringboot" />
+        <module name="ch8-11" />
+        <module name="redistest" />
+        <module name="ch8-13" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="books" target="1.8" />
+      <module name="ch8-10" target="1.8" />
+      <module name="ch8-11" target="1.8" />
+      <module name="ch8-13" target="1.8" />
+      <module name="ch8-14" target="1.8" />
+      <module name="ch8-21" target="1.8" />
+      <module name="ch8-21-2" target="1.8" />
+      <module name="ch8-9" target="1.8" />
+      <module name="ch9-1" target="1.8" />
+      <module name="ch9-1-2" target="1.8" />
+      <module name="ch9-17-2" target="1.8" />
+      <module name="ch9-17hellospringboot" target="1.8" />
+      <module name="ch9-3" target="1.8" />
+      <module name="ch9-3-2" target="1.8" />
+      <module name="ch9-5" target="1.8" />
+      <module name="ch9-6" target="1.8" />
+      <module name="hellospringmvc" target="1.8" />
+      <module name="myspringmvc" target="1.8" />
+      <module name="redistest" target="1.8" />
+      <module name="ssm_controller" target="1.8" />
+      <module name="ssm_dao" target="8" />
+      <module name="ssm_my0910" target="1.8" />
+      <module name="ssm_service" target="8" />
+      <module name="testspringmvc" target="1.8" />
+      <module name="web01" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ch9-17-2" options="-parameters" />
+      <module name="ch9-17hellospringboot" options="-parameters" />
+    </option>
+  </component>
+</project>

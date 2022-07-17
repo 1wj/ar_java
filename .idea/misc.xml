@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/../ajax-course/ch8-14" />
+    <file type="web" url="file://$PROJECT_DIR$/books" />
+    <file type="web" url="file://$PROJECT_DIR$/ch8-10" />
+    <file type="web" url="file://$PROJECT_DIR$/ch8-11" />
+    <file type="web" url="file://$PROJECT_DIR$/ch8-13" />
+    <file type="web" url="file://$PROJECT_DIR$/ch8-21" />
+    <file type="web" url="file://$PROJECT_DIR$/ch8-9" />
+    <file type="web" url="file://$PROJECT_DIR$/ch9-1" />
+    <file type="web" url="file://$PROJECT_DIR$/ch9-5/testspringmvc" />
+    <file type="web" url="file://$PROJECT_DIR$/redistest" />
+    <file type="web" url="file://$PROJECT_DIR$/web01" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/myspringmvc/pom.xml" />
+        <option value="$PROJECT_DIR$/ch9-5/pom.xml" />
+        <option value="$PROJECT_DIR$/ssm_my0910/pom.xml" />
+        <option value="$PROJECT_DIR$/ch9-17hellospringboot/pom.xml" />
+        <option value="$PROJECT_DIR$/ch9-17-2/pom.xml" />
+        <option value="$PROJECT_DIR$/ch8-13/pom.xml" />
+        <option value="$PROJECT_DIR$/ch8-11/pom.xml" />
+        <option value="$PROJECT_DIR$/redistest/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/ch9-5/testspringmvc/pom.xml" />
+        <option value="$PROJECT_DIR$/myspringmvc/hellospringmvc/pom.xml" />
+        <option value="$PROJECT_DIR$/myspringmvc/ssm_controller/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

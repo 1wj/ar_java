@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ch8-13.iml" filepath="$PROJECT_DIR$/ch8-13.iml" />
+      <module fileurl="file://D:/qqwenjian/app_backend_dev/develop/module/frc/frc.iml" filepath="D:/qqwenjian/app_backend_dev/develop/module/frc/frc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testfrc/testfrc.iml" filepath="$PROJECT_DIR$/testfrc/testfrc.iml" />
+    </modules>
+  </component>
+</project>

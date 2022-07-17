@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.cn.bj.dao.PersonDao">
+    <select id="queryByPno" resultMap="useMap">
+        select * from my_person where pno=#{pno}
+    </select>
+   <resultMap id="useMap" type="org.cn.bj.domain.Person">
+       <id  column="pno" property="pno"/>
+       <result column="pname" property="pname"/>
+       <result column="page" property="page"/>
+       <result column="psex" property="psex"/>
+       <!--配置一对一的关联映射-->
+       <association column="cardid" select="org.cn.bj.dao.CardDao.selectByCardId" property="card" javaType="org.cn.bj.domain.Card">
+
+       </association>
+   </resultMap>
+
+
+
+</mapper>

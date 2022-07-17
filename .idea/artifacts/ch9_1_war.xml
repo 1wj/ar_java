@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ch9-1:war">
+    <output-path>$PROJECT_DIR$/ch9-1/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>ch9-1</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="ch9-1-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="ch9-1:war exploded" />
+    </root>
+  </artifact>
+</component>

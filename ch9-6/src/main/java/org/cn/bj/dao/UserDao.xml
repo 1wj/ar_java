@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.cn.bj.dao.UserDao">
+
+
+    <select id="queryByParam" resultType="org.cn.bj.domain.User">
+        select * from test_user_t where 1=1
+        <if test="userid!=null">
+            and userid=#{userid}
+        </if>
+        <if test="uname!=null">
+            and uname=#{uname}
+        </if>
+        <if test="upwd!=null">
+            and upwd=#{upwd}
+        </if>
+    </select>
+
+    <select id="selectUserByid" resultType="org.cn.bj.domain.User">
+         select * from test_user_t where userid=#{userid}
+    </select>
+
+    <insert id="saveOne">
+        insert into test_user_t(userid,uname,upwd) values (#{userid},#{uname},#{upwd})
+    </insert>
+
+    <select id="selectAll" resultType="org.cn.bj.domain.User">
+        select * from test_user_t
+    </select>
+
+    <select id="selectAll2" resultType="java.util.Map">
+        select userid as 用户id ,uname as 用户名,  upwd as 用户密码
+        from test_user_t
+    </select>
+
+    <resultMap id="userMap" type="org.cn.bj.domain.User">
+        <id column="用户id" property="userid"/>
+        <result column="用户名"  property="uname" />
+        <result column="用户密码" property="upwd"/>
+
+    </resultMap>
+    <select id="selectAll3" resultMap="userMap">
+        select userid as 用户id ,uname as 用户名,  upwd as 用户密码
+        from test_user_t
+    </select>
+
+  <!--  <insert id="saveTwo">
+        <selectKey keyProperty="userid" order="BEFORE" resultType="java.lang.String">
+            select test_98.nextval from dual
+        </selectKey>
+        insert into test_user_t(userid,uname,upwd) values (#{userid},#{uname},#{upwd})
+    </insert>-->
+
+    <!--一般用这个上面的太麻烦-->
+    <insert id="saveTwo">
+        insert into test_user_t(userid,uname,upwd) values (test_98.nextval,#{uname},#{upwd})
+    </insert>
+    <insert id="saveThree">
+        insert into test_user_t(userid,uname,upwd) values (#{userid},#{uname},#{upwd})
+    </insert>
+
+    <update id="updateOne">
+        update test_user_t set upwd=#{upwd} where userid=#{userid}
+    </update>
+
+    <delete id="deleteOne">
+        delete from test_user_t where userid=#{userid}
+    </delete>
+</mapper>
